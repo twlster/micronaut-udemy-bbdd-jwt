@@ -16,14 +16,19 @@ dependencies {
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     implementation("io.micronaut.security:micronaut-security-jwt")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
-    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.projectreactor:reactor-core")
     compileOnly("io.micronaut:micronaut-http-client")
+    compileOnly("org.projectlombok:lombok:1.18.30")
+    runtimeOnly("io.micronaut.sql:micronaut-jdbc-hikari")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.h2database:h2")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.30")
     testImplementation("io.micronaut:micronaut-http-client")
+    testCompileOnly("org.projectlombok:lombok:1.18.30")
     aotPlugins platform("io.micronaut.platform:micronaut-platform:4.2.0")
     aotPlugins("io.micronaut.security:micronaut-security-aot")
 }
@@ -33,8 +38,8 @@ application {
     mainClass.set("com.udemy.micronautjwt.Application")
 }
 java {
-    sourceCompatibility = JavaVersion.toVersion("17")
-    targetCompatibility = JavaVersion.toVersion("17")
+    sourceCompatibility = JavaVersion.toVersion("18")
+    targetCompatibility = JavaVersion.toVersion("18")
 }
 
 
