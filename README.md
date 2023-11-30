@@ -9,6 +9,17 @@
 - [Shadow Gradle Plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
 - [Micronaut Gradle Plugin documentation](https://micronaut-projects.github.io/micronaut-gradle-plugin/latest/)
 - [GraalVM Gradle Plugin documentation](https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html)
+
+---
+## Before starting remember to create a postgres DB with these parameters:
+
+POSTGRES_PASSWORD=secret \
+POSTGRES_DB=mn-stock-broker
+
+### In case of using Docker, use this command:
+
+docker run --name my-postgres -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=mn-stock-broker -p 5432:5432 -d postgres:12.4
+
 ## Feature security-jwt documentation
 
 - [Micronaut Security JWT documentation](https://micronaut-projects.github.io/micronaut-security/latest/guide/index.html)
